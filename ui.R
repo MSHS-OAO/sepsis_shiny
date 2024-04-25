@@ -38,6 +38,7 @@ ui <- fluidPage(
                  )
 
         ),
-        tableOutput("volume_by_alert_type")
+        tableOutput("volume_by_alert_type"),
+        tableOutput("time_to_action")
       
     )
