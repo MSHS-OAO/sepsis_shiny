@@ -5,7 +5,7 @@ server <- function(input, output, session) {
   #                         data_update <- data %>% filter()
   #                       })
   output$volume_by_alert_type <- function() {
-    data <- data %>% filter(alert_initially_shown_time_est >= as.POSIXct("2024-03-15 00:00:00"))
+    data <- data %>% filter(alert_initially_shown_time_est >= as.POSIXct("2024-03-17 00:00:00"))
     
     
     total_alerts_data <- volume_by_alert_type(data, data, "total")
@@ -25,7 +25,7 @@ server <- function(input, output, session) {
   }
   
   output$time_to_action <- function() {
-    data <- data %>% filter(alert_initially_shown_time_est >= as.POSIXct("2024-03-15 00:00:00"))
+    data <- data %>% filter(alert_initially_shown_time_est >= as.POSIXct("2024-03-17 00:00:00"))
     
     alert_shown_to_ch_action <- data %>% group_by(alert_subtype) %>% summarise(avg = mean(hours_to_ch_action, na.rm = T),
                                                                                median = median(hours_to_ch_action, na.rm = T))
